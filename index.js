@@ -13,6 +13,10 @@ if (process.env.NODE_ENV === 'development') {
     server.use(cors());
 }
 
+server.use('*', (req, res) => {
+    res.send('<h1>Success!</h1>');
+});
+
 const PORT = process.env.PORT || 2000;
 
 server.listen(PORT, () => {
